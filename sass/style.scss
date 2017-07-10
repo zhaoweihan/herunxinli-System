@@ -1,0 +1,81 @@
+@import './reset.scss';
+.mint-header{
+    box-shadow: 0 1px 6px $baseColor;
+    img{
+        vertical-align: top;
+    }
+}
+.curriculumList{
+    width: 100%;
+    padding-top: 40px;
+    li{
+        $li-height:120px;
+        $img-height:100px;
+        position: relative;
+        width: 100%;
+        height:  $li-height;
+        &+li{
+            border-top:1px solid #f0f0f0;
+        }
+        // 左侧图片
+        .imgbox{
+            float: left;
+            margin-top:  ($li-height - $img-height) / 2;
+            margin-left: 10px;
+            width: $img-height;
+            height: $img-height;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        // 中间信息
+        .middle{
+            position: relative;
+            float: left;
+            width: calc(100% - #{$img-height} - 10px - #{$li-height});
+            margin-top:  ($li-height - $img-height) / 2;
+            height: $img-height;
+            padding-left: 15px;
+            .dateTime{
+                font-size: 12px;
+                color: 666;
+            }
+            .mint-badge{
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+            .Number{
+                position: absolute;
+                font-size: 18px;
+                font-weight: bold;
+                width: 48px;
+                left: 15px;
+                bottom: 16px;
+                text-align: center;
+            }
+            .dhsl{
+                position: absolute;
+                bottom: 0;
+                left: 15px;
+                font-size: 12px;
+            }
+        }
+        // 右侧按钮
+        .btnArea{
+            float: right;
+            width: $li-height;
+            height: 100%;
+            button{
+                margin-left: 24px;
+                &:first-of-type{
+                    margin-top: 22px;
+                    margin-bottom: 10px;
+                }
+                &.success{
+                    background: #4caf50;
+                }
+            }
+        }
+    }
+}

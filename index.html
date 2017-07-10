@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>和润心理</title>
+    <link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="index">
+        <mt-header title="和润心理" fixed>
+            <a href="javascript:;" slot="right">
+                <mt-button><img src="./img/icon/add.svg" alt=""></mt-button>
+            </a>
+        </mt-header>
+        <ul class="curriculumList">
+            <li>
+                <div class="imgbox"><img src="./img/阿童木.jpg" alt="课程图片"></div>
+                <div class="middle">
+                    <p class="dateTime">2017-7-10 12:30</p>
+                    <mt-badge size="small">上架</mt-badge>
+                    <p class="Number">521</p>
+                    <span class="dhsl">兑换数量</span>
+                </div>
+                <div class="btnArea">
+                    <mt-button size="small" type="danger">下架</mt-button>
+                    <mt-button size="small" type="primary">编辑 </mt-button>
+                </div>
+                <div class="clr"></div>
+            </li>
+            <li>
+                <div class="imgbox"><img src="./img/阿童木.jpg" alt="课程图片"></div>
+                <div class="middle">
+                    <p class="dateTime">2017-7-10 12:30</p>
+                    <mt-badge size="small" color="#888">下架</mt-badge>
+                    <p class="Number">521</p>
+                    <span class="dhsl">兑换数量</span>
+                </div>
+                <div class="btnArea">
+                    <mt-button size="small" type="danger" class="success">上架</mt-button>
+                    <mt-button size="small" type="primary">编辑 </mt-button>
+                </div>
+                <div class="clr"></div>
+            </li>
+        </ul>
+        <mt-tabbar>
+            <mt-tab-item id="管理">
+                <img slot="icon" src="./img/icon/management.svg"> 管理
+            </mt-tab-item>
+            <mt-tab-item id="兑换">
+                <img slot="icon" src="./img/icon/exchange.svg"> 兑换
+            </mt-tab-item>
+        </mt-tabbar>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.3.4/vue.min.js"></script>
+    <script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
