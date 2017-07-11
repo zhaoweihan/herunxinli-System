@@ -14,7 +14,7 @@
     <div id="exchange">
         <mt-header title="和润心理"></mt-header>
         <form @submit.prevent="onSubmit" class="exchangeForm">
-            <input type="tel" v-model="exChangeNumber" placeholder="请输入兑换码" maxlength="5">
+            <input type="text" v-model="exChangeNumber" placeholder="请输入兑换码" maxlength="5" pattern="[0-9]*">
             <mt-button type="primary" size="large" :disabled="!exChangeNumber">确定兑换</mt-button>
         </form>
         <mt-tabbar v-model="selected">
