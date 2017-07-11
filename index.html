@@ -13,8 +13,8 @@
 <body>
     <div id="index">
         <mt-header title="和润心理" fixed>
-            <a href="javascript:;" slot="right">
-                <mt-button><img src="./img/icon/add.svg" alt=""></mt-button>
+            <a href="add.html" slot="right">
+                <mt-button><img src="./img/icon/add.svg" alt="添加"></mt-button>
             </a>
         </mt-header>
         <ul class="curriculumList">
@@ -47,7 +47,7 @@
                 <div class="clr"></div>
             </li>
         </ul>
-        <mt-tabbar>
+        <mt-tabbar v-model="selected">
             <mt-tab-item id="管理">
                 <img slot="icon" src="./img/icon/management.svg"> 管理
             </mt-tab-item>

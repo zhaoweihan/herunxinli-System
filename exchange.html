@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>兑换</title>
+</head>
+
+<body style="height:100%;">
+    <div id="exchange">
+        <mt-header title="和润心理"></mt-header>
+        <form @submit.prevent="onSubmit" class="exchangeForm">
+            <input type="tel" v-model="exChangeNumber" placeholder="请输入兑换码" maxlength="5">
+            <mt-button type="primary" size="large" :disabled="!exChangeNumber">确定兑换</mt-button>
+        </form>
+        <mt-tabbar v-model="selected">
+            <mt-tab-item id="管理">
+                <img slot="icon" src="./img/icon/management.svg"> 管理
+            </mt-tab-item>
+            <mt-tab-item id="兑换">
+                <img slot="icon" src="./img/icon/exchange.svg"> 兑换
+            </mt-tab-item>
+        </mt-tabbar>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.3.4/vue.min.js"></script>
+    <script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+    <script src="./js/add.js"></script>
+</body>
+
+</html>
