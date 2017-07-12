@@ -2,10 +2,11 @@ var add = new Vue({
     el: '#add',
     data: {
         //课程图片
-        productImg:'',
-        productName: '',//课程名称
-        integral: "",//兑换所需积分
-        selected: "管理"
+        productImg: '',
+        productName: '', //课程名称
+        integral: "", //兑换所需积分
+        selected: "管理",
+        maskStatus:false
     },
     methods: {
         onSubmit: function () {
@@ -15,6 +16,14 @@ var add = new Vue({
             } else {
                 this.$messagebox.alert('提示', '提交成功');
             }
+        },
+        // input file change事件 打开截图遮罩层
+        fileMaskOpen:function(){
+            this.maskStatus=true;
+        },
+        //关闭遮罩层
+        closeMask:function(){
+            this.maskStatus=false;
         }
     },
     watch: {
@@ -25,6 +34,23 @@ var add = new Vue({
                 window.location.href = "index.html";
             }
         }
+    },
+    mounted: function () {
+        var self=this;
+        var addImg = new bjj.PhotoClip("#clipArea", {
+            size: [200, 200],
+            outputSize: [100, 100],
+            file: "#uploadImg",
+            ok: "#clipBtn",
+            loadError:function(errMsg,imgError){
+                console.log('errMsg:'+errMsg);
+                console.log('imgError:'+imgError);
+            },
+            clipFinish: function (dataURL) {
+                self.maskStatus=false;
+                self.productImg=dataURL;
+            }
+        });
     }
 })
 var exchange = new Vue({
