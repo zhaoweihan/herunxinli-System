@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>登录</title>
+</head>
+
+<body style="height:100%;">
+    <div id="login">
+        <form @submit.prevent="onSubmit" class="addForm">
+            <h2>和润心里</h2>
+            <mt-field label="用户名" placeholder="请输入用户名" v-model="username" :attr="{maxlength:18}"></mt-field>
+            <mt-field label="密码" placeholder="请输入密码" type="password" v-model="password" :attr="{maxlength:18}"></mt-field>
+            <mt-button type="primary" size="large" :disabled="!username||!password">登 录</mt-button>
+        </form>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.3.4/vue.min.js"></script>
+    <script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

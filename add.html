@@ -21,14 +21,14 @@
             <div class="upload">
                 <div class="title">添加图片</div>
                 <label class="imgbox" for="uploadImg">
-                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQBAMAAAB8P++eAAAAHlBMVEXu7u5gYGAzMzPo6OhVVVXi4uJzc3NycnI9PT0yMjLxbnAyAAAAQ0lEQVRIx2MYBaNgFIwCsgCLAJEKmUYVjiqEA3NBMBBqhNDJOBWaKEHAJAjlPBg9M6pwkCskupBiDWAYBaNgFAxhAAAzSAcOLVThbgAAAABJRU5ErkJggg==" alt="上传课程图片">
+                     <img :src="productImg" >
                      <input type="file" id="uploadImg">
                 </label>
             </div>
 
-            <mt-field label="商品名称" placeholder="请输入商品名称" disableClear v-model="productName"></mt-field>
-            <mt-field label="所需积分" placeholder="请输入所需积分" disableClear type="text" v-model="integral" :attr="{ pattern: '[0-9]*' }"></mt-field>
-            <mt-button type="primary" size="large">完 成</mt-button>
+            <mt-field label="商品名称" placeholder="请输入商品名称" disableClear v-model="productName" :attr="{ maxlength:10}"></mt-field>
+            <mt-field label="所需积分" placeholder="请输入所需积分" disableClear type="text" v-model="integral" :attr="{ pattern: '[0-9]*' ,maxlength:6}"></mt-field>
+            <mt-button type="primary" size="large" :disabled="!productName||!integral||!productImg">完 成</mt-button>
         </form>
         <mt-tabbar v-model="selected">
             <mt-tab-item id="管理">
