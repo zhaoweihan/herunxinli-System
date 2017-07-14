@@ -219,17 +219,24 @@ html {
   align-items: center;
   justify-content: center;
   height: 100%;
-  background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%); }
+  background: url(../img/loginbg.jpg); }
   #login form {
-    border-radius: 10px; }
+    border-radius: 10px;
+    box-shadow: 0 0 6px #ccc;
+    background: #fff;
+    padding: 5px; }
     #login form h2 {
       text-align: center;
-      color: #666;
+      color: #7DAFB8;
       margin-bottom: 50px;
       font-size: 26px; }
     #login form .mint-cell {
       background: transparent; }
       #login form .mint-cell input {
         background: transparent; }
+    #login form button {
+      width: 60%;
+      margin: 15px auto;
+      display: block; }
 
 /*# sourceMappingURL=style.css.map */

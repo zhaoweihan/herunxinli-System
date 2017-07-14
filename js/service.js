@@ -1,3 +1,4 @@
+// http://doc.weiwei528.com/hrxl/swagger-ui.html
 (function ($) {
     function server() {
         this.baseUrl = "";
@@ -43,6 +44,29 @@
 
                 }
             });
+        },
+        headerToken: function () {
+            var nonceStr = this.randomStr();
+            var timestamp=Math.floor(new Date().getTime()/1000);
+            var signature=hex_md5(key+timestamp+nonceStr);
+            return {
+                nonceStr:nonceStr,
+                timestamp:timestamp,
+                signature:signature
+            }
+        },
+        randomStr: function () {
+            var str = '';
+            var letterArr = []
+            for (var i = 97; i <= 122; i++) {
+                letterArr.push(String.fromCharCode(i));
+            }
+            for (var index = 0; index < 4; index++) {
+                str += letterArr[Math.floor(Math.random() * 26)];
+                str += Math.floor(Math.random() * 10);
+            }
+            return str;
         }
+
     }
 })(jQuery)
