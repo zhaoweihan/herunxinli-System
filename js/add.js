@@ -1,4 +1,7 @@
-var add = new Vue({
+/**
+ * 添加课程
+ */
+var app = new Vue({
     el: '#add',
     data: {
         //课程图片
@@ -53,7 +56,12 @@ var add = new Vue({
         });
     }
 })
-var exchange = new Vue({
+
+
+/**
+ * 兑换
+ */
+var app = new Vue({
     el: '#exchange',
     data: {
         exChangeNumber: '',

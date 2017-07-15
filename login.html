@@ -12,15 +12,18 @@
 
 <body style="height:100%;">
     <div id="login">
-        <form @submit.prevent="onSubmit" class="addForm">
-            <h2>和润心里</h2>
+        <div class="addForm">
+            <h2>和润心理</h2>
             <mt-field label="用户名" placeholder="请输入用户名" v-model="username" :attr="{maxlength:18}"></mt-field>
             <mt-field label="密码" placeholder="请输入密码" type="password" v-model="password" :attr="{maxlength:18}"></mt-field>
-            <mt-button type="primary" size="small" :disabled="!username||!password">登 录</mt-button>
-        </form>
+            <mt-button type="primary" size="small" :disabled="!username||!password" @click.native="onSubmit">登 录</mt-button>
+        </div>
     </div>
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.3.4/vue.min.js"></script>
     <script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+    <script src="./js/sct.min.js"></script>
+    <script src="./js/service.js"></script>
     <script src="./js/login.js"></script>
 </body>
 
