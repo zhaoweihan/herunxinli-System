@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>和润心理</title>
-    <link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+    <link rel="stylesheet" href="./css/mint-ui.2.2.7.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <div id="index">
+    <div id="index" :class="{'see':see}">
         <mt-header title="和润心理" fixed>
             <a href="add.html" slot="right">
                 <mt-button><img src="./img/icon/add.svg" alt="添加"></mt-button>
@@ -31,8 +31,8 @@
                     <span class="dhsl">兑换数量</span>
                 </div>
                 <div class="btnArea">
-                    <mt-button size="small" type="danger" :class="{'success':!item.status}">{{item.status|status(1)}}</mt-button>
-                    <mt-button size="small" type="primary">编辑 </mt-button>
+                    <mt-button size="small" type="danger" :class="{'success':!item.status}" @click.native="downAndUp(item.status,item.id)">{{item.status|status(1)}}</mt-button>
+                    <mt-button size="small" type="primary" :disabled="item.status==1" @click.native="edit(item.id,item.img,item.name,item.integral)">编辑</mt-button>
                 </div>
                 <div class="clr"></div>
             </li>
@@ -49,7 +49,7 @@
     </div>
     <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.3.4/vue.min.js"></script>
-    <script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+    <script src="./js/mint-ui.2.2.7.min.js"></script>
     <script src="./js/sct.min.js"></script>
     <script src="./js/service.js"></script>
     <script src="./js/index.js"></script>

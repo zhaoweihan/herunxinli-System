@@ -13,7 +13,7 @@
                     localStorage.clear();
                     window.location.href = 'login.html';
                 });
-                
+
             }
         },
         ajax: function (options) {
@@ -23,6 +23,10 @@
                 async: true,
                 type: "post",
                 url: "",
+                contentType: "application/x-www-form-urlencoded",
+                processData: true,
+                cache: true,
+                beforeSend: function () {},
                 success: function () {},
                 error: function () {},
                 timeout: function () {}
@@ -43,6 +47,10 @@
                 async: defaults.async,
                 headers: this.headerToken(isBackId),
                 data: defaults.data,
+                beforeSend: defaults.beforeSend(),
+                processData: defaults.processData,
+                contentType: defaults.contentType,
+                cache: defaults.cache,
                 success: function (data) {
                     var code = Number(data.responseHead.code);
                     if (code == 200) {
@@ -54,7 +62,7 @@
                                 localStorage.clear();
                                 window.location.href = 'login.html';
                             });
-                        }else{
+                        } else {
                             app.$toast(data.responseHead.msg)
                         }
                         defaults.error(data.responseHead.code, data.responseHead.msg);
@@ -77,7 +85,7 @@
             var key = localStorage.getItem("token");
             var nonceStr = this.randomStr();
             var timestamp = Math.floor(new Date().getTime() / 1000);
-            var signature = hex_md5(key + timestamp + nonceStr);
+            var signature = hex_md5(timestamp + key + nonceStr);
             if (bl) {
                 return {
                     nonceStr: nonceStr,
@@ -100,7 +108,17 @@
                 str += Math.floor(Math.random() * 10);
             }
             return str;
-        }
+        },
+        /*
+         * 获取地址栏参数，支持直接传中文参数
+         */
+        getUrlParam: function (name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); // 构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg); // 匹配目标参数
+            if (r != null)
+                return decodeURIComponent(r[2]);
+            return null; // 返回参数值
+        },
 
     }
     win.Server = Server; //把对象挂载到window下

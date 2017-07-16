@@ -85,20 +85,26 @@ html body .mint-header .frequency {
   position: fixed;
 }
 
-.curriculumList {
+#index {
+  opacity: 0;
+}
+#index.see {
+  opacity: 1;
+}
+#index .curriculumList {
   width: 100%;
   padding-top: 40px;
   padding-bottom: 55px;
 }
-.curriculumList li {
+#index .curriculumList li {
   position: relative;
   width: 100%;
   height: 120px;
 }
-.curriculumList li + li {
+#index .curriculumList li + li {
   border-top: 1px solid #f0f0f0;
 }
-.curriculumList li .imgbox {
+#index .curriculumList li .imgbox {
   position: relative;
   float: left;
   margin-top: 10px;
@@ -106,11 +112,11 @@ html body .mint-header .frequency {
   width: 100px;
   height: 100px;
 }
-.curriculumList li .imgbox img {
+#index .curriculumList li .imgbox img {
   width: 100%;
   height: 100%;
 }
-.curriculumList li .imgbox span {
+#index .curriculumList li .imgbox span {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -121,10 +127,10 @@ html body .mint-header .frequency {
   text-align: center;
   display: block;
 }
-.curriculumList li .imgbox span.integral {
+#index .curriculumList li .imgbox span.integral {
   bottom: 16px;
 }
-.curriculumList li .middle {
+#index .curriculumList li .middle {
   position: relative;
   float: left;
   width: calc(100% - 100px - 10px - 120px);
@@ -132,15 +138,15 @@ html body .mint-header .frequency {
   height: 100px;
   padding-left: 15px;
 }
-.curriculumList li .middle .dateTime {
+#index .curriculumList li .middle .dateTime {
   font-size: 12px;
   color: 666;
 }
-.curriculumList li .middle .mint-badge {
+#index .curriculumList li .middle .mint-badge {
   margin-top: 10px;
   margin-left: 10px;
 }
-.curriculumList li .middle .Number {
+#index .curriculumList li .middle .Number {
   position: absolute;
   font-size: 18px;
   font-weight: bold;
@@ -149,25 +155,25 @@ html body .mint-header .frequency {
   bottom: 16px;
   text-align: center;
 }
-.curriculumList li .middle .dhsl {
+#index .curriculumList li .middle .dhsl {
   position: absolute;
   bottom: 0;
   left: 15px;
   font-size: 12px;
 }
-.curriculumList li .btnArea {
+#index .curriculumList li .btnArea {
   float: right;
   width: 120px;
   height: 100%;
 }
-.curriculumList li .btnArea button {
+#index .curriculumList li .btnArea button {
   margin-left: 34px;
 }
-.curriculumList li .btnArea button:first-of-type {
+#index .curriculumList li .btnArea button:first-of-type {
   margin-top: 22px;
   margin-bottom: 10px;
 }
-.curriculumList li .btnArea button.success {
+#index .curriculumList li .btnArea button.success {
   background: #4caf50;
 }
 
