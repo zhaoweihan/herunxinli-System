@@ -144,7 +144,18 @@ var app = new Vue({
             if (!rex.test(this.exChangeNumber)) {
                 this.$toast('兑换码为5位数字')
             } else {
-                this.$messagebox.alert('提示', '提交成功');
+                var self=this;
+                server.ajax({
+                    url:"/goods/useExchangedGoods",
+                    data:{
+                        code:self.exChangeNumber,
+                        backUserId:localStorage.getItem("id")
+                    },
+                    success:function(result){
+                        self.$toast("兑换成功");
+                    }
+                })
+              
             }
         }
     },
