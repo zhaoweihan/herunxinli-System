@@ -70,14 +70,15 @@ var app = new Vue({
                 })
             });
         },
-        // 编辑修改课程
-        edit: function (id, img, name, integral) {
-            window.location.href = "add.html?goodsId=" + id + "&baseUrl=" + this.baseImageUrl + "&imgUrl=" + img + "&name=" + name + "&integral=" + integral;
-        },
+        
         // 退出登录
         signOut(){
             localStorage.clear();
             window.location.href="login.html";
+        },
+        // 编辑修改课程
+        edit: function (id, img, name, integral,productUrl) {
+            window.location.href = "add.html?goodsId=" + id + "&baseUrl=" + this.baseImageUrl + "&imgUrl=" + img + "&name=" + name + "&integral=" + integral+"&productUrl="+productUrl;
         }
     },
     watch: {

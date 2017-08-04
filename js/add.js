@@ -7,7 +7,8 @@ var app = new Vue({
         //课程图片
         productImg: '',
         productName: '', //课程名称
-        integral: "", //兑换所需积分
+        integral: "", //兑换所需积分,
+        productUrl: "", //课程链接
         selected: "管理",
         maskStatus: false,
         baseImageUrl: ''
@@ -24,7 +25,8 @@ var app = new Vue({
                     backUserId: localStorage.getItem("id"),
                     name: self.productName,
                     img: self.productImg,
-                    integral: self.integral
+                    integral: self.integral,
+                    url: self.productUrl
                 }
                 if (server.getUrlParam("goodsId")) { //修改
                     url = "/goods/update";
@@ -91,6 +93,7 @@ var app = new Vue({
             this.productImg = server.getUrlParam("imgUrl");
             this.productName = server.getUrlParam("name");
             this.integral = server.getUrlParam("integral");
+            this.productUrl = server.getUrlParam("productUrl");
         }
 
     },
@@ -144,18 +147,18 @@ var app = new Vue({
             if (!rex.test(this.exChangeNumber)) {
                 this.$toast('兑换码为5位数字')
             } else {
-                var self=this;
+                var self = this;
                 server.ajax({
-                    url:"/goods/useExchangedGoods",
-                    data:{
-                        code:self.exChangeNumber,
-                        backUserId:localStorage.getItem("id")
+                    url: "/goods/useExchangedGoods",
+                    data: {
+                        code: self.exChangeNumber,
+                        backUserId: localStorage.getItem("id")
                     },
-                    success:function(result){
+                    success: function (result) {
                         self.$toast("兑换成功");
                     }
                 })
-              
+
             }
         }
     },
