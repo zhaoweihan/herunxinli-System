@@ -13,6 +13,7 @@
 <body>
     <div id="index" :class="{'see':see}">
         <mt-header title="和润心理" fixed>
+            <a href="javascript:;" slot="left" @click="signOut()"><mt-button><img src="./img/icon/drop.svg" alt="退出"></mt-button></a>
             <a href="add.html" slot="right">
                 <mt-button><img src="./img/icon/add.svg" alt="添加"></mt-button>
             </a>
