@@ -20,9 +20,11 @@
         <ul class="curriculumList"  v-infinite-scroll="loadMore" infinite-scroll-disabled="true" infinite-scroll-distance="10" infinite-scroll-immediate-check="false">
             <li v-for="item in curriculumList" :key="item.id" :data-id="item.id">
                 <div class="imgbox">
-                    <img :src="baseImageUrl+item.img"  alt="课程图片">
-                    <span class="integral">{{item.integral}}分</span>
-                    <span>{{item.name}}</span>
+                    <a :href="item.url">
+                        <img :src="baseImageUrl+item.img"  alt="课程图片">
+                        <span class="integral">{{item.integral}}分</span>
+                        <span>{{item.name}}</span>
+                    </a>
                 </div>
                 <div class="middle">
                     <p class="dateTime">{{item.updateTime}}</p>
@@ -32,7 +34,7 @@
                 </div>
                 <div class="btnArea">
                     <mt-button size="small" type="danger" :class="{'success':!item.status}" @click.native="downAndUp(item.status,item.id)">{{item.status|status(1)}}</mt-button>
-                    <mt-button size="small" type="primary" :disabled="item.status==1" @click.native="edit(item.id,item.img,item.name,item.integral)">编辑</mt-button>
+                    <mt-button size="small" type="primary" :disabled="item.status==1" @click.native="edit(item.id,item.img,item.name,item.integral,item.url)">编辑</mt-button>
                 </div>
                 <div class="clr"></div>
             </li>

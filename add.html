@@ -28,7 +28,8 @@
 
             <mt-field label="商品名称" placeholder="请输入商品名称" disableClear v-model="productName" :attr="{ maxlength:8}"></mt-field>
             <mt-field label="所需积分" placeholder="请输入所需积分" disableClear type="text" v-model="integral" :attr="{ pattern: '[0-9]*' ,maxlength:6}"></mt-field>
-            <mt-button type="primary" size="large" :disabled="!productName||!integral||!productImg" >完 成</mt-button>
+            <mt-field label="课程链接" placeholder="请输入课程详情链接" disableClear type="url" v-model="productUrl" ></mt-field>
+            <mt-button type="primary" size="large" :disabled="!productName||!integral||!productImg||!productUrl" >完 成</mt-button>
         </form>
         <mt-tabbar v-model="selected">
             <mt-tab-item id="管理">
